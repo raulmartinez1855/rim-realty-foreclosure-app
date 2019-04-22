@@ -1,0 +1,16 @@
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  .flex-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

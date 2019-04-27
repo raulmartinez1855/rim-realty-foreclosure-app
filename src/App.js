@@ -22,11 +22,13 @@ export default class App extends Component {
 
   createCSV = arr => {
     const csvArr = arr.reduce((acc, cur) => {
-      const { defendant, address, city, state, zip } = cur;
-      return [...acc, [defendant, address, city, state, zip]];
+      const { dateCreated, caseNumber, address, name, notice } = cur;
+      return [...acc, [dateCreated, caseNumber, notice, name, address]];
     }, []);
     const csvContent =
       "data:text/csv;charset=utf-8," + csvArr.map(e => e.join(",")).join("\n");
+
+    console.log(encodeURI(csvContent));
     return encodeURI(csvContent);
   };
 

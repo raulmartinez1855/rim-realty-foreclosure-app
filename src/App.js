@@ -10,7 +10,9 @@ export default class App extends Component {
   }
 
   fetchResults = async () => {
-    const res = await fetch("https://expppress.herokuapp.com/api?pageSize=200");
+    const res = await fetch(
+      "https://expppress.herokuapp.com/api?pageSize=1000"
+    );
     const resJson = await res.json();
     const listings = resJson.data.reduce((acc, cv) => {
       const date = cv.dateCreated;
@@ -21,14 +23,13 @@ export default class App extends Component {
   };
 
   createCSV = arr => {
+    console.log(this.state.listings);
     const csvArr = arr.reduce((acc, cur) => {
       const { dateCreated, caseNumber, address, name, notice } = cur;
       return [...acc, [dateCreated, caseNumber, notice, name, address]];
     }, []);
     const csvContent =
       "data:text/csv;charset=utf-8," + csvArr.map(e => e.join(",")).join("\n");
-
-    console.log(encodeURI(csvContent));
     return encodeURI(csvContent);
   };
 
@@ -55,7 +56,7 @@ export default class App extends Component {
             const results = this.state.listings[date];
 
             return (
-              <div key={date} className="row align-items-center">
+              <div key={date} className="listings row align-items-center">
                 <div className="col-xs">
                   Foreclosures Generated on {date}:{" "}
                   <a

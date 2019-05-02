@@ -1,3 +1,5 @@
+@import './loading';
+
 html, body, #root {
   height: 100%;
   width: 100%;
@@ -10,7 +12,11 @@ html, body, #root {
   width: 100%;
   .flex-wrapper {
     display: flex;
+    flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
+  }
+  .listings {
+    padding: .5rem 0;
   }
 }

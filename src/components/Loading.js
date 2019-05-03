@@ -1,6 +1,6 @@
 import React from "react";
 /*
-I have to give credit to https://loading.io/css/ for this loading animation.
+Credit to https://loading.io/css/ for this loading animation.
 they saved me a ton of time by having amazing premade loaders.
 */
 

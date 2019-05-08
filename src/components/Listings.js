@@ -31,7 +31,6 @@ export default class Listings extends Component {
   };
 
   createCSV = arr => {
-    console.log(this.state.listings);
     const csvArr = arr.reduce((acc, cur) => {
       const { dateCreated, caseNumber, address, name, notice } = cur;
       return [...acc, [dateCreated, caseNumber, notice, name, address]];

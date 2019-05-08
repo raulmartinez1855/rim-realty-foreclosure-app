@@ -32,7 +32,7 @@ export default class App extends Component {
                       Foreclosures Generated on {date}:{" "}
                       <a
                         className="btn btn-dark"
-                        download
+                        download={`${date}-listings`}
                         href={createCSV(results)}
                       >
                         Download

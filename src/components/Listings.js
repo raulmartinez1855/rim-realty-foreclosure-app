@@ -13,7 +13,7 @@ export default class Listings extends Component {
   fetchResults = async () => {
     try {
       const res = await fetch(
-        "https://expppress.herokuapp.com/api?pageSize=1000"
+        "https://expppress.herokuapp.com/api?pageSize=2000"
       );
       const resJson = await res.json();
       const listings = resJson.data.reduce((acc, cv) => {
